@@ -1,0 +1,6 @@
+[
+  { "name": "useToggle", "path": "/use-toggle" },
+  { "name": "useTimeout", "path": "/use-timeout" },
+  { "name": "useGeolocation", "path": "/use-geolocation" },
+  { "name": "useDebounce", "path": "/use-debounce" }
+]
