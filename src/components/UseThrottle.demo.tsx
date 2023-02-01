@@ -1,5 +1,5 @@
 import { useState, ChangeEvent } from 'react';
-import { useThrottle } from '../hooks';
+import { useThrottle } from 'hooks';
 
 export const UseThrottleDemo = () => {
   const [searchParam, setSearchParam] = useState<string>('');
