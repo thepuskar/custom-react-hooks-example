@@ -6,6 +6,7 @@ import {
   UseTimeoutDemo,
   UseGeolocationDemo,
   UseDebounceDemo,
+  UseThrottleDemo
 } from './components';
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: '/use-debounce',
     element: <UseDebounceDemo />,
+  },
+  {
+    path: '/use-throttle',
+    element: <UseThrottleDemo />,
   },
 ]);
 
