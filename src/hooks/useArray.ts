@@ -45,5 +45,52 @@ export const useArray = () => {
     return array;
   }
 
-  return { push, filter, move };
+  /**
+   *
+   * It removes an element from an array, and returns a new array
+   * @param {(number | string | { id: any })[]} array - (number | string | { id: any })[]
+   * @param {any} id - any - the id of the item to remove
+   * @param [prop] - keyof { id: any }
+   * @returns (number | string | { id: any })[]
+   *
+   * * Example:
+   * ```
+   * let array = [1, 2, 3, "a", "b", {id: 1, name: "John"}, {id: 2, name: "Jane"}];
+   * let updatedArray = remove(array, 3);
+   * console.log(updatedArray); // [1, 2, "a", "b", {id: 1, name: "John"}, {id: 2, name: "Jane"}]
+   * updatedArray = remove(array, "b");
+   * console.log(updatedArray); // [1, 2, 3, "a", {id: 1, name: "John"}, {id: 2, name: "Jane"}]
+   * updatedArray = remove(array, 1, "id");
+   * console.log(updatedArray); // [2, 3, "a", "b", {id: 2, name: "Jane"}]
+   * ```
+   */
+  function remove(
+    array: (number | string | { id: any })[],
+    id: any,
+    prop?: keyof { id: any }
+  ): (number | string | { id: any })[] {
+    if (!prop) {
+      const index = array.indexOf(id);
+      if (index === -1) return array;
+      return [...array.slice(0, index), ...array.slice(index + 1)];
+    } else {
+      const index = array.findIndex(
+        (x) => typeof x === "object" && x[prop] === id
+      );
+      if (index === -1) return array;
+      return [...array.slice(0, index), ...array.slice(index + 1)];
+    }
+  }
+
+  /**
+   * The function takes an array of type T and removes all elements from the array
+   * @param {T[]} array - The array to clear.
+   */
+  function clear<T>(array: T[]) {
+    while (array?.length > 0) {
+      array.pop();
+    }
+  }
+
+  return { push, filter, move, remove, clear };
 };
