@@ -1,38 +1,43 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Home from './Home';
+import Home from "./Home";
 import {
   UseToggleDemo,
   UseTimeoutDemo,
   UseGeolocationDemo,
   UseDebounceDemo,
-  UseThrottleDemo
-} from './components';
+  UseThrottleDemo,
+  UseArrayDemo,
+} from "./components";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Home />,
   },
   {
-    path: '/use-toggle',
+    path: "/use-toggle",
     element: <UseToggleDemo />,
   },
   {
-    path: '/use-timeout',
+    path: "/use-timeout",
     element: <UseTimeoutDemo />,
   },
   {
-    path: '/use-geolocation',
+    path: "/use-geolocation",
     element: <UseGeolocationDemo />,
   },
   {
-    path: '/use-debounce',
+    path: "/use-debounce",
     element: <UseDebounceDemo />,
   },
   {
-    path: '/use-throttle',
+    path: "/use-throttle",
     element: <UseThrottleDemo />,
+  },
+  {
+    path: "/use-array",
+    element: <UseArrayDemo />,
   },
 ]);
 

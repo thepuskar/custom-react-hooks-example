@@ -64,11 +64,11 @@ export const useArray = () => {
    * console.log(updatedArray); // [2, 3, "a", "b", {id: 2, name: "Jane"}]
    * ```
    */
-  function remove(
-    array: (number | string | { id: any })[],
+  function remove<T extends { id: any }>(
+    array: T[],
     id: any,
     prop?: keyof { id: any }
-  ): (number | string | { id: any })[] {
+  ): T[] {
     if (!prop) {
       const index = array.indexOf(id);
       if (index === -1) return array;
@@ -87,10 +87,32 @@ export const useArray = () => {
    * @param {T[]} array - The array to clear.
    */
   function clear<T>(array: T[]) {
-    while (array?.length > 0) {
-      array.pop();
+    if (array?.length > 0) {
+      return array.splice(0, array.length);
     }
   }
 
-  return { push, filter, move, remove, clear };
+  /**
+   * Takes an array of any type T as input and returns a shuffled array of the same type.
+   * @param {T[]} array - The array to shuffle.
+   * @returns Returns a shuffled array.
+   */
+  function shuffle<T>(array: T[]): T[] {
+    let currentIndex = array.length,
+      randomIndex;
+
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
+  }
+
+  return { push, filter, move, remove, clear, shuffle };
 };

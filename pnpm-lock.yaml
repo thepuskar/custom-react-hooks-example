@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@types/react': ^18.0.26
@@ -15,8 +15,8 @@ specifiers:
 dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-pro-sidebar: 1.0.0_4076cec502acd4bd096bfc1f1d17cbac
-  react-router-dom: 6.6.2_react-dom@18.2.0+react@18.2.0
+  react-pro-sidebar: 1.0.0_ib3m5ricvtkl2cll7qpr2f6lvq
+  react-router-dom: 6.6.2_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   '@types/react': 18.0.26
@@ -307,7 +307,7 @@ packages:
     resolution: {integrity: sha512-G/YwXTkv7Den9mXDO7AhLWkE3q+I92B+VqAE+dYG4NGPaHZGvt3G8Q0p9vmE+sq7rTGphUbAvmQ9YpbfMQGGlA==}
     dev: false
 
-  /@emotion/react/11.10.5_5642dd39ea6eb7af96c6ee336ce01d77:
+  /@emotion/react/11.10.5_kzbn2opkn2327fwg5yzwzya5o4:
     resolution: {integrity: sha512-TZs6235tCJ/7iF6/rvTaOH4oxQg2gMAcdHemjwLKIjKz4rRuYe1HJ2TQJKnAcRAfOUDdU8XoDadCe1rl72iv8A==}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -345,7 +345,7 @@ packages:
     resolution: {integrity: sha512-zxRBwl93sHMsOj4zs+OslQKg/uhF38MB+OMKoCrVuS0nyTkqnau+BM3WGEoOptg9Oz45T/aIGs1qbVAsEFo3nA==}
     dev: false
 
-  /@emotion/styled/11.10.5_8541363ac4962cde609cd41c7d73f2cd:
+  /@emotion/styled/11.10.5_qvatmowesywn4ye42qoh247szu:
     resolution: {integrity: sha512-8EP6dD7dMkdku2foLoruPCNkRevzdcBaY6q0l0OsbyJK+x8D9HWjX27ARiSIKNF634hY9Zdoedh8bJCiva8yZw==}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -361,7 +361,7 @@ packages:
       '@babel/runtime': 7.20.13
       '@emotion/babel-plugin': 11.10.5
       '@emotion/is-prop-valid': 1.2.0
-      '@emotion/react': 11.10.5_5642dd39ea6eb7af96c6ee336ce01d77
+      '@emotion/react': 11.10.5_kzbn2opkn2327fwg5yzwzya5o4
       '@emotion/serialize': 1.1.1
       '@emotion/use-insertion-effect-with-fallbacks': 1.0.0_react@18.2.0
       '@emotion/utils': 1.2.0
@@ -640,7 +640,6 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
-    dev: true
 
   /@types/react-dom/18.0.10:
     resolution: {integrity: sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==}
@@ -654,11 +653,9 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
       csstype: 3.1.1
-    dev: true
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: true
 
   /@vitejs/plugin-react/3.0.1_vite@4.0.4:
     resolution: {integrity: sha512-mx+QvYwIbbpOIJw+hypjnW1lAbKDHtWK5ibkF/V1/oMBu8HU/chb+SnqJDAsLq1+7rGqjktCEomMTM5KShzUKQ==}
@@ -774,6 +771,7 @@ packages:
     resolution: {integrity: sha512-G8LEkV0XzDMNwXKgM0Jwu3nY3lSTwSGY6XbxM9cr9+s0T/qSV1q1JVPBGzm3dcjhCic9+emZDmMffkwgPeOeLg==}
     engines: {node: '>=12'}
     hasBin: true
+    requiresBuild: true
     optionalDependencies:
       '@esbuild/android-arm': 0.16.17
       '@esbuild/android-arm64': 0.16.17
@@ -984,14 +982,14 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
 
-  /react-pro-sidebar/1.0.0_4076cec502acd4bd096bfc1f1d17cbac:
+  /react-pro-sidebar/1.0.0_ib3m5ricvtkl2cll7qpr2f6lvq:
     resolution: {integrity: sha512-TAU3vHj0rYHSLWdZksiWte59dwh3rweaFY+dXri+y8mtlbQalxnNTG11k9wRCiaMa0IGPmIIbdY1E1yoHBUd/A==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
-      '@emotion/react': 11.10.5_5642dd39ea6eb7af96c6ee336ce01d77
-      '@emotion/styled': 11.10.5_8541363ac4962cde609cd41c7d73f2cd
+      '@emotion/react': 11.10.5_kzbn2opkn2327fwg5yzwzya5o4
+      '@emotion/styled': 11.10.5_qvatmowesywn4ye42qoh247szu
       '@popperjs/core': 2.11.6
       classnames: 2.3.2
       react: 18.2.0
@@ -1006,7 +1004,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-router-dom/6.6.2_react-dom@18.2.0+react@18.2.0:
+  /react-router-dom/6.6.2_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-6SCDXxRQqW5af8ImOqKza7icmQ47/EMbz572uFjzvcArg3lZ+04PxSPp8qGs+p2Y+q+b+S/AjXv8m8dyLndIIA==}
     engines: {node: '>=14'}
     peerDependencies:
