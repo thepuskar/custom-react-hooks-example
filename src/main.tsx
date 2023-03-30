@@ -1,10 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import { createRoot } from "react-dom/client";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+import { Routes } from "lib";
+import "./index.css";
+import "./App.css";
+
+const container = document.getElementById("root")!;
+createRoot(container).render(<Routes />);
