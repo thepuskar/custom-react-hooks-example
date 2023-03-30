@@ -3,5 +3,6 @@
   { "name": "useTimeout", "path": "/use-timeout" },
   { "name": "useGeolocation", "path": "/use-geolocation" },
   { "name": "useDebounce", "path": "/use-debounce" },
-  { "name": "useThrottle", "path": "/use-throttle" }
+  { "name": "useThrottle", "path": "/use-throttle" },
+  { "name": "useArray", "path": "/use-array" }
 ]
