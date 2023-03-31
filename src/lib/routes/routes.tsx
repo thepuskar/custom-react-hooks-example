@@ -55,8 +55,6 @@ const router = createBrowserRouter([
   { element: <App children={<Outlet />} />, children: routes },
 ]);
 
-console.log("routes", regularRoutes);
-
 export const Routes = () => {
   return <RouterProvider router={router} />;
 };

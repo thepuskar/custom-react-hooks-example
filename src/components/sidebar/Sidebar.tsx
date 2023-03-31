@@ -1,4 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import type { RouteObject } from "react-router-dom";
+
+import { regularRoutes } from "lib/routes";
+import { moveArrayPosition, snakeToCamelCase, uid } from "utils";
+
 import reactLogo from "assets/react.svg";
 
 interface ISidebarProps {
@@ -22,9 +28,9 @@ export const Sidebar = ({ children }: ISidebarProps) => {
           stroke="currentColor"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M4 6h16M4 12h16M4 18h16"
           />
         </svg>
@@ -52,9 +58,9 @@ export const Sidebar = ({ children }: ISidebarProps) => {
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
@@ -67,9 +73,9 @@ export const Sidebar = ({ children }: ISidebarProps) => {
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M6 18L18 6M6 6l12 12"
             />
           </svg>
@@ -98,11 +104,27 @@ export const Sidebar = ({ children }: ISidebarProps) => {
           </a>
 
           <nav data-dev-hint="main navigation">
+            {moveArrayPosition(regularRoutes, "/", 0, "path")?.map(
+              (data: RouteObject) => (
+                <div key={uid()}>
+                  <Link
+                    to={data?.path || "/"}
+                    className="flex items-center p-2 text-base font-normal text-gray-200 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                  >
+                    <span className="ml-3">
+                      {data?.path === "/"
+                        ? "Home"
+                        : snakeToCamelCase(data?.path || "Home")}
+                    </span>
+                  </Link>
+                </div>
+              )
+            )}
             <a
               href="#"
               className="flex items-center space-x-2 py-2 px-4 transition duration-200 hover:bg-gray-700 hover:text-white"
             >
-              <span className="ml-6">useToggle</span>
+              {/* <span className="ml-6">useToggle</span> */}
             </a>
           </nav>
         </div>
