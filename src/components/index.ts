@@ -5,3 +5,4 @@ export * from "./UseDebounce.demo";
 export * from "./UseThrottle.demo";
 export * from "./sidebar";
 export * from "./UseArrayDemo";
+export * from "./common";

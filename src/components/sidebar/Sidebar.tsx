@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import type { RouteObject } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import type { RouteObject } from 'react-router-dom'
 
-import { regularRoutes } from "lib/routes";
-import { moveArrayPosition, snakeToCamelCase, uid } from "utils";
+import { regularRoutes } from 'lib/routes'
+import { moveArrayPosition, snakeToCamelCase, uid } from 'utils'
 
-import reactLogo from "assets/react.svg";
+import reactLogo from 'assets/react.svg'
 
 interface ISidebarProps {
-  children?: React.ReactNode;
+  children?: React.ReactNode
 }
 export const Sidebar = ({ children }: ISidebarProps) => {
   return (
@@ -91,8 +91,8 @@ export const Sidebar = ({ children }: ISidebarProps) => {
           className="flex flex-col space-y-6"
           data-dev-hint="optional div for having an extra footer navigation"
         >
-          <a
-            href="#"
+          <Link
+            to="/"
             className="text-white flex items-center space-x-2 px-4"
             title="Your App is cool"
           >
@@ -101,20 +101,20 @@ export const Sidebar = ({ children }: ISidebarProps) => {
             <span className="text-2xl font-extrabold whitespace-nowrap truncate">
               custom-hooks
             </span>
-          </a>
+          </Link>
 
           <nav data-dev-hint="main navigation">
-            {moveArrayPosition(regularRoutes, "/", 0, "path")?.map(
+            {moveArrayPosition(regularRoutes, '/', 0, 'path')?.map(
               (data: RouteObject) => (
                 <div key={uid()}>
                   <Link
-                    to={data?.path || "/"}
+                    to={data?.path || '/'}
                     className="flex items-center p-2 text-base font-normal text-gray-200 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     <span className="ml-3">
-                      {data?.path === "/"
-                        ? "Home"
-                        : snakeToCamelCase(data?.path || "Home")}
+                      {data?.path === '/'
+                        ? 'Home'
+                        : snakeToCamelCase(data?.path || 'Home')}
                     </span>
                   </Link>
                 </div>
@@ -134,5 +134,5 @@ export const Sidebar = ({ children }: ISidebarProps) => {
         {children ? children : null}
       </main>
     </div>
-  );
-};
+  )
+}

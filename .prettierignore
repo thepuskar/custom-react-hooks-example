@@ -1,0 +1,12 @@
+/node_modules
+
+/bin
+
+/coverage
+
+/build
+
+*.eslintrc.json
+*next.config.js
+*package-lock.json
+*tsconfig.json
