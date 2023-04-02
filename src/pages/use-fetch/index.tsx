@@ -13,7 +13,7 @@ export default function UseFetchDemo() {
   const { data, loading, isSuccess, refetch, isError, error } = useFetch(
     'https://jsonplaceholder.typicode.com/photos'
   )
-  console.log('data', isError, error?.message)
+
   return (
     <div>
       <Header title="useFetch Demo" />

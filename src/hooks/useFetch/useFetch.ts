@@ -37,7 +37,6 @@ function queryReducer<T>(
         loading: false,
         data: action.payload,
       }
-
     case 'FETCH_FAILURE':
       return {
         ...state,
@@ -63,38 +62,42 @@ export function useFetch<T>(
 
   const fetchData = useCallback(async () => {
     dispatch({ type: 'FETCH_INIT' })
-    if (cache[url]) {
-      dispatch({ type: 'FETCH_SUCCESS', payload: cache[url] })
-    } else {
-      try {
+    try {
+      const cachedData = cache[url]
+      if (cachedData) {
+        dispatch({ type: 'FETCH_SUCCESS', payload: cachedData })
+      } else {
         const response = await fetch(url, options)
-        if (!response?.ok) {
+        if (!response.ok) {
           throw new Error(response.statusText)
         }
         const jsonData = (await response.json()) as T
         cache[url] = jsonData
         dispatch({ type: 'FETCH_SUCCESS', payload: jsonData })
-      } catch (err) {
-        dispatch({ type: 'FETCH_FAILURE', payload: err as Error })
       }
+    } catch (err) {
+      dispatch({ type: 'FETCH_FAILURE', payload: err as Error })
     }
-  }, [url])
+  }, [url, options])
 
   useEffect(() => {
     fetchData()
-  }, [])
+  }, [fetchData])
 
   const refetch = useCallback(() => {
     delete cache[url]
     fetchData()
   }, [url, fetchData])
 
+  const isSuccess = !state.loading && !state.error
+  const isError = !!state.error
+
   return {
     data: state.data,
     loading: state.loading,
     error: state.error,
     refetch,
-    isSuccess: !state.loading && !state.error,
-    isError: !!state.error,
+    isSuccess,
+    isError,
   }
 }
