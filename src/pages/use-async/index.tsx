@@ -12,7 +12,14 @@ export default function UseAsyncDemo() {
     return res.json()
   }
 
-  const { data, error, status, execute } = useAsync<IUser[]>(fetchUser, false)
+  const [state, execute] = useAsync(
+    async () => {
+      const res = await fetch('https://jsonplaceholder.typicode.com/users')
+      return res.json()
+    },
+    [],
+    true
+  )
 
   return (
     <div>
@@ -21,12 +28,12 @@ export default function UseAsyncDemo() {
       <button type="button" onClick={() => execute()}>
         Execute
       </button>
-      {status === 'loading' && <p>Loading...</p>}
-      {status === 'success' && <p>Fetched successful!</p>}
-      {status === 'error' && <p>Fetched failed: {error?.message}</p>}
-      {status === 'success' && data ? (
+      {state?.loading && <p>Loading...</p>}
+
+      {state?.error && <p>Fetched failed</p>}
+      {!state?.loading && state?.value ? (
         <ul>
-          {(data as IUser[]).map((user: IUser) => (
+          {(state?.value as unknown as IUser[])?.map((user: IUser) => (
             <li key={user.id}>{user?.name}</li>
           ))}
         </ul>
